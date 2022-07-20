@@ -266,3 +266,18 @@ DRY 原则中文描述是：不要重复自己，将它应用在编程中，可�
 
 
 ![](https://typora.xpp011.cn/typora/img/fbf1ae0ce08d4ea890b80944c2b8309f.jpg)
+
+
+
+
+
+
+
+## 单例模式(Singleton Design Pattern)
+
+
+
+
+
+
+
