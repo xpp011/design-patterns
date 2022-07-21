@@ -1,5 +1,11 @@
 package SingletonDesignPattern;
 
+
+import java.io.*;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+
 /**
  * @program: design-patterns
  * @description: 单例模式
@@ -8,15 +14,36 @@ package SingletonDesignPattern;
  **/
 
 public class Singleton {
-    public static void main(String[] args) {
+    public static void main(String[] args)  throws Exception {
+        reflectiveBreak();
+        serializableBreak();
+    }
 
+    static void reflectiveBreak () throws Exception {
+        EagerSingleton right = EagerSingleton.getInstance();
+        Class<EagerSingleton> clzss = EagerSingleton.class;
+        Constructor<EagerSingleton> constructor = clzss.getDeclaredConstructor();
+        constructor.setAccessible(true);
+        EagerSingleton instance = constructor.newInstance();
+        System.out.println(instance == right);
+    }
+
+    static void serializableBreak() throws Exception {
+        EagerSingleton instance = EagerSingleton.getInstance();
+        String name = "D:\\win10桌面存放\\DesignPatterns\\design-patterns\\SingletonDesignPattern\\a.txt";
+        ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream(name));
+        writer.writeObject(instance);
+
+        ObjectInputStream read = new ObjectInputStream(new FileInputStream(name));
+        EagerSingleton eagerSingleton = (EagerSingleton) read.readObject();
+        System.out.println(instance == eagerSingleton);
     }
 }
 
 /**
  * 饿汉式
  */
-class EagerSingleton {
+class EagerSingleton implements Serializable{
 
     private static final EagerSingleton instance = new EagerSingleton();
     ;
@@ -64,6 +91,23 @@ class LazySingleton {
         return instance;
     }
 
+    /**
+     * temporary variable
+     * @return
+     */
+    public static LazySingleton getInstanceTemp() {
+        LazySingleton temp = instance;
+        if (temp == null) {
+            synchronized (LazySingleton.class) {
+                temp = instance;
+                if (temp == null) {
+                    temp = new LazySingleton();
+                    instance = temp;
+                }
+            }
+        }
+        return temp;
+    }
 }
 
 /**
@@ -90,9 +134,8 @@ class StaticInnerSingleton {
 
 enum EnumSingleton {
     INSTANCE;
-    private static Singleton instance = new Singleton();
 
-    public static Singleton getInstance() {
-        return instance;
+    public static EnumSingleton getInstance() {
+        return INSTANCE;
     }
 }
