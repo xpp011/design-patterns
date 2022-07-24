@@ -24,7 +24,21 @@
 
 ## 经典实现
 
+### JDK
 
+ `java.lang.Runtime` 的懒汉式单例模式
+
+![image-20220724141104259](https://typora.xpp011.cn/typora/img/image-20220724141104259.png)
+
+
+
+
+
+### Spring
+
+`org.springframework.core.ReactiveAdapterRegistry`，懒汉式(double check)的单例模式
+
+![image-20220724141351036](https://typora.xpp011.cn/typora/img/image-20220724141351036.png)
 
 
 
