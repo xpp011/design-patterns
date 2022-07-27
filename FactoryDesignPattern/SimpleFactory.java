@@ -45,6 +45,12 @@ public class SimpleFactory {
 
 
 class RuleConfigSource {
+
+    public static void main(String[] args) {
+        RuleConfigSourceMap ruleConfigSourceMap = new RuleConfigSourceMap();
+        RuleConfig ruleConfig = ruleConfigSourceMap.load(new File("path"));
+    }
+
     RuleConfig load(File file) {
         String fileName = file.getName();
         String fileExtension = getFileExtension(fileName);

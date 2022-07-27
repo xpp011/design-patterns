@@ -5,8 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f99f250-5654-4aed-b1d2-bfeb61121b5f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/FactoryDesignPattern/SimpleFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SingletonDesignPattern/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/SingletonDesignPattern/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FactoryDesignPattern/FactoryMethodMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FactoryDesignPattern/demo/ApplicationContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FactoryDesignPattern/demo/ClassPathXmlApplicationContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FactoryDesignPattern/demo/DemoApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FactoryDesignPattern/demo/croe/BeanConfigParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FactoryDesignPattern/demo/croe/BeanDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FactoryDesignPattern/demo/croe/BeansFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FactoryDesignPattern/demo/croe/XmlBeanConfigParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FactoryDesignPattern/demo/entity/A.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FactoryDesignPattern/demo/entity/B.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FactoryDesignPattern/demo/resource/beans.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FactoryDesignPattern/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/FactoryDesignPattern/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FactoryDesignPattern/SimpleFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/FactoryDesignPattern/SimpleFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +30,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Tag Library Descriptor" />
         <option value="Class" />
       </list>
     </option>
@@ -51,6 +66,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
@@ -71,6 +87,7 @@
       <option name="presentableId" value="Default" />
       <updated>1658671930688</updated>
       <workItem from="1658671946878" duration="4336000" />
+      <workItem from="1658931170487" duration="5447000" />
     </task>
     <servers />
   </component>

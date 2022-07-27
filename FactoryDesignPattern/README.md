@@ -136,6 +136,138 @@ class RuleConfig {
 
 ## 工厂方法（Factory Method）
 
+现在设想一种场景，创建`IRuleConfigParser`的方法非常复杂，需要各种组合其他类，以及初始化一系列操作，并且每一种`IRuleConfigParser`的初始化和组合类都不同， 那么把创建`IRuleConfigParser`的代码在放置在`createParser`方法中真的合适吗？答案是否定的。
+
+这样就不再符合单一职责和开闭原则以及代码的耦合度变的极高了，每次想修改其中一个都需要面对`createParser`方法中的一大坨代码
+
+显然是不合适的，那怎么办呢，其实只要为每一种创建设立单独的工厂类，并再创建一个简单工厂来创建这些工厂类。说上去很绕，直接上代码
+
+```java
+interface IFactoryMethod {
+    IRuleConfigParser createParser();
+}
+
+class YamlFactoryMethod implements IFactoryMethod{
+    @Override
+    public IRuleConfigParser createParser() {
+        //啪啪啪一顿组合和初始化操作
+        return new YamlRuleConfigParser();
+    }
+}
+
+class PropertiesFactoryMethod implements IFactoryMethod{
+    @Override
+    public IRuleConfigParser createParser() {
+        //啪啪啪一顿组合和初始化操作
+        return new PropertiesRuleConfigParser();
+    }
+}
+
+```
+
+再为这些工厂类创建一个简单工厂
+
+```java
+public class FactoryMethodMap {
+
+    public static IFactoryMethod createFactory(String fileExtension) {
+        switch (fileExtension.toLowerCase()) {
+            case "yaml":
+                new YamlFactoryMethod();
+            case "properties":
+                new PropertiesFactoryMethod();
+            default:
+                throw new RuntimeException("Rule config file format is not supported " + fileExtension);
+        }
+    }
+
+}
+```
+
+这每次修改和扩展，代码的改动非常少，基本上符合开闭原则。
+
+由于样例代码中的创建`IRuleConfigParser`的代码非常单薄，只有一个new关键字，体现不太出来简单工厂的优势。
 
 
-使用Supplier优化
+
+**工厂方法一定好吗？**
+
+并不是，可以看到代码的整体复杂度又上去了（多了一层），并且如果我们想要扩展一种`IRuleConfigParser`，我就需要创建两个类，所以工厂方法适用于一些复杂的创建逻辑。
+
+
+
+## 抽象工厂（Abstract Factory）
+
+现在假设又多了一种`SystemConfigParser`系统配置解析器， 并且需要为他创建各式各样的解析器
+
+>针对规则配置的解析器：基于接口IRuleConfigParser
+>
+>JsonRuleConfigParser
+>
+>XmlRuleConfigParser
+>
+>YamlRuleConfigParser
+>
+>PropertiesRuleConfigParser
+>
+>针对系统配置的解析器：基于接口ISystemConfigParser
+>
+>JsonSystemConfigParser
+>
+>XmlSystemConfigParser
+>
+>YamlSystemConfigParser
+>
+>PropertiesSystemConfigParser
+
+那么需要创建的工厂类就太多了，并且如果未来又扩展了一种解析器，可维护性和扩展性就变得极差了，
+
+抽象工厂就是针对这种非常特殊的场景而诞生的。我们可以让一个工厂负责创建多个不同类型的对象（IRuleConfigParser、ISystemConfigParser 等），而不是只创建一种 parser 对象。这样就可以有效地减少工厂类的个数。具体的代码实现如下所示：
+
+```java
+
+public interface IConfigParserFactory {
+  IRuleConfigParser createRuleParser();
+  ISystemConfigParser createSystemParser();
+  //此处可以扩展新的parser类型，比如IBizConfigParser
+}
+
+public class JsonConfigParserFactory implements IConfigParserFactory {
+  @Override
+  public IRuleConfigParser createRuleParser() {
+    return new JsonRuleConfigParser();
+  }
+
+  @Override
+  public ISystemConfigParser createSystemParser() {
+    return new JsonSystemConfigParser();
+  }
+}
+
+public class XmlConfigParserFactory implements IConfigParserFactory {
+  @Override
+  public IRuleConfigParser createRuleParser() {
+    return new XmlRuleConfigParser();
+  }
+
+  @Override
+  public ISystemConfigParser createSystemParser() {
+    return new XmlSystemConfigParser();
+  }
+}
+
+// 省略YamlConfigParserFactory和PropertiesConfigParserFactory代码
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
