@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <beans>
 
     <bean id="a" class = "FactoryDesignPattern.demo.entity.A">
-        <constructor-arg type = "String" value="??"/>
+        <constructor-arg type = "String" value="张三"/>
     </bean>
 
     <bean id="b" class = "FactoryDesignPattern.demo.entity.B">
-        <constructor-arg type = "String" value="?????"/>
+        <constructor-arg type = "String" value="张三"/>
         <constructor-arg ref="a"/>
     </bean>
 

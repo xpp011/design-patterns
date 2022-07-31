@@ -17,4 +17,12 @@ public class B {
         this.nickName = nickName;
         this.a = a;
     }
+
+    @Override
+    public String toString() {
+        return "B{" +
+                "nickName='" + nickName + '\'' +
+                ", a=" + a +
+                '}';
+    }
 }

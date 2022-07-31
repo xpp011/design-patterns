@@ -9,6 +9,6 @@ package FactoryDesignPattern.demo;
 
 public interface ApplicationContext {
 
-    <T> T getBean(String beanId, Class<T> clzss);
+    <T> T getBean(String beanId);
 
 }

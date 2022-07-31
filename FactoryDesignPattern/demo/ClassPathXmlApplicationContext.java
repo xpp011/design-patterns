@@ -25,7 +25,7 @@ public class ClassPathXmlApplicationContext implements ApplicationContext{
     public ClassPathXmlApplicationContext(String configLocation) {
         this.beansFactory = new BeansFactory();
         this.beanConfigParser = new XmlBeanConfigParser();
-        
+        loadBeanDefinition(configLocation);
     }
 
     private void loadBeanDefinition(String configLocation) {
@@ -41,7 +41,7 @@ public class ClassPathXmlApplicationContext implements ApplicationContext{
     }
 
     @Override
-    public <T> T getBean(String beanId, Class<T> clzss) {
-        return beansFactory.getBean(beanId, clzss);
+    public <T> T getBean(String beanId) {
+        return (T) beansFactory.getBean(beanId);
     }
 }
