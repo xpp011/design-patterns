@@ -14,9 +14,9 @@ public class FactoryMethodMap {
     public static IFactoryMethod createFactory(String fileExtension) {
         switch (fileExtension.toLowerCase()) {
             case "yaml":
-                new YamlFactoryMethod();
+                return new YamlFactoryMethod();
             case "properties":
-                new PropertiesFactoryMethod();
+                return new PropertiesFactoryMethod();
             default:
                 throw new RuntimeException("Rule config file format is not supported " + fileExtension);
         }

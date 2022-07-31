@@ -10,7 +10,18 @@
 
 ## 经典实现
 
+### Spring 
 
+- BeanFactory  简单工厂
+- FactoryBean  工厂方法
+
+
+
+### JDK
+
+`java.util.Calendar`
+
+![image-20220731215554226](https://typora.xpp011.cn/typora/img/image-20220731215554226.png)
 
 
 
@@ -173,9 +184,9 @@ public class FactoryMethodMap {
     public static IFactoryMethod createFactory(String fileExtension) {
         switch (fileExtension.toLowerCase()) {
             case "yaml":
-                new YamlFactoryMethod();
+                return new YamlFactoryMethod();
             case "properties":
-                new PropertiesFactoryMethod();
+                return new PropertiesFactoryMethod();
             default:
                 throw new RuntimeException("Rule config file format is not supported " + fileExtension);
         }
