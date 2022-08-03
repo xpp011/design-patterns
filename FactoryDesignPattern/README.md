@@ -1,6 +1,5 @@
 #  工厂模式（Factory Design Pattern）
 
-[TOC]
 
 
 ## 定义
