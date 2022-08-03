@@ -1,6 +1,6 @@
 # 单例模式(Singleton Design Pattern)
 
-
+[TOC]
 
 ## 定义
 

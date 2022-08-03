@@ -16,6 +16,11 @@ import java.util.Arrays;
 public class BuilderPattern {
 
     public static void main(String[] args) {
+        At at = new At.Builder()
+                .setAtMobiles(Arrays.asList("150XXXXXXXX"))
+                .setAtUserIds(Arrays.asList("user123"))
+                .setAtAll(true)
+                .builder();
         Message message = new MarkDownMessage.Builder()
                 .setTitle("杭州天气")
                 .setText(new StringBuilder()
@@ -24,11 +29,7 @@ public class BuilderPattern {
                         .append("> ![screenshot](https://img.alicdn.com/tfs/TB1NwmBEL9TBuNjy1zbXXXpepXa-2400-1218.png)\n")
                         .append("> ###### 10点20分发布 [天气](https://www.dingtalk.com) \n")
                         .toString())
-                .setAt(new At.Builder()
-                        .setAtMobiles(Arrays.asList("150XXXXXXXX"))
-                        .setAtUserIds(Arrays.asList("user123"))
-                        .setAtAll(true)
-                        .builder())
+                .setAt(at)
                 .builder();
 
         System.out.println(message.toString());

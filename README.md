@@ -1,7 +1,7 @@
 # design-patterns
 设计模式
 
-
+[TOC]
 
 ## 前置
 

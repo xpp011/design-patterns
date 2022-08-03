@@ -28,15 +28,29 @@ public class XmlBeanConfigParser implements BeanConfigParser{
 
         //bean A
         Supplier<BeanDefinition> a = () -> {
-            ConstructorArg arg = new ConstructorArg(false, String.class, "张三");
+            ConstructorArg arg = new ConstructorArg.Builder()
+                    .setRef(false)
+                    .setType(String.class)
+                    .setArg("张三")
+                    .builder();
+
             BeanDefinition beanDefinition = new BeanDefinition(A.class.getName(), "a", arg);
             return beanDefinition;
         };
 
         //bean B
         Supplier<BeanDefinition> b = () -> {
-            ConstructorArg arg1 = new ConstructorArg(false, String.class, "李四");
-            ConstructorArg arg2 = new ConstructorArg(true, A.class, "a");
+            ConstructorArg arg1 = new ConstructorArg.Builder()
+                    .setRef(false)
+                    .setType(String.class)
+                    .setArg("李四")
+                    .builder();
+
+            ConstructorArg arg2 = new ConstructorArg.Builder()
+                    .setRef(true)
+                    .setType(A.class)
+                    .setArg("a")
+                    .builder();
             BeanDefinition beanDefinition = new BeanDefinition(B.class.getName(), "b", arg1, arg2);
             return beanDefinition;
         };

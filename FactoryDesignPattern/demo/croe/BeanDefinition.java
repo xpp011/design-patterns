@@ -58,21 +58,46 @@ public class BeanDefinition {
 
         private Object arg;
 
-        public ConstructorArg(boolean isRef, Class<?> type, Object arg) {
+        private ConstructorArg(boolean isRef, Class<?> type, Object arg) {
             this.isRef = isRef;
             this.type = type;
             this.arg = arg;
         }
 
-        public boolean isRef() {
-            return isRef;
-        }
+        public static class Builder {
 
-        public Class<?> getType() {
-            return type;
-        }
-        public Object getArg() {
-            return arg;
+            private boolean isRef;
+
+            private Class<?> type;
+
+            private Object arg;
+
+            public Builder setRef(boolean ref) {
+                isRef = ref;
+                return this;
+            }
+
+            public Builder setType(Class<?> type) {
+                this.type = type;
+                return this;
+            }
+
+            public Builder setArg(Object arg) {
+                this.arg = arg;
+                return this;
+            }
+
+            public  ConstructorArg builder() {
+                if (arg == null) {
+                    throw new RuntimeException("arg required");
+                }
+
+                if (!isRef && type == null) {
+                    throw new RuntimeException("basic parameter type this parameter is mandatory");
+                }
+
+                return new ConstructorArg(isRef, type, arg);
+            }
         }
 
     }
