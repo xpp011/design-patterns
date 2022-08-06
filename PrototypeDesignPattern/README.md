@@ -41,7 +41,7 @@ BeanUtils
 ### 递归复制对象
 
 ```java
-public class PrototypePattern implements Cloneable, Serializable {
+public class PrototypeDesignPattern implements Cloneable, Serializable {
 
     private String name;
 
@@ -49,7 +49,7 @@ public class PrototypePattern implements Cloneable, Serializable {
 
     private Word word;
 
-    public PrototypePattern(String name, Short age, Word word) {
+    public PrototypeDesignPattern(String name, Short age, Word word) {
         this.name = name;
         this.age = age;
         this.word = word;
@@ -57,7 +57,7 @@ public class PrototypePattern implements Cloneable, Serializable {
 
     public Object clone() {
         //递归复制对象，复制基础对象以及String
-        PrototypePattern recursionClone = new PrototypePattern(name, age, (Word) word.clone());
+        PrototypeDesignPattern recursionClone = new PrototypeDesignPattern(name, age, (Word) word.clone());
     }
 }
 

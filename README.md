@@ -2,6 +2,17 @@
 设计模式
 
 
+## 设计模式目录
+### 创建型模式
+- [单例模式](https://github.com/xpp011/design-patterns/tree/main/SingletonDesignPattern)
+  > 保证一个类仅有一个实例，并提供一个访问它的全局访问点。
+- [工厂模式](https://github.com/xpp011/design-patterns/tree/main/FactoryDesignPattern)
+  > 定义一个用于创建对象的接口，让子类决定实例化哪一个类。工厂方法使一个类的实例化延迟到其子类。
+- [建造者模式](https://github.com/xpp011/design-patterns/tree/main/BuilderDesignPattern)
+  > 将一个复杂对象的构建和它的表示分离，是的统一的创建过程可以创建不同的表示。
+- [原型模式](https://github.com/xpp011/design-patterns/tree/main/PrototypeDesignPattern)
+  > 用原型实例指定创建对象的种类，并且通过考虑这些原型创建新的对象。
+
 ## 前置
 
 ### 一、代码质量评判标准
@@ -272,7 +283,6 @@ DRY 原则中文描述是：不要重复自己，将它应用在编程中，可�
 
 
 
-## 单例模式(Singleton Design Pattern)
 
 
 

@@ -3,8 +3,6 @@ package SingletonDesignPattern;
 
 import java.io.*;
 import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 
 /**
  * @program: design-patterns
@@ -13,7 +11,7 @@ import java.lang.reflect.InvocationTargetException;
  * @create: 2022-07-20 23:18
  **/
 
-public class Singleton {
+public class SingletonPattern {
     public static void main(String[] args)  throws Exception {
         reflectiveBreak();
         serializableBreak();

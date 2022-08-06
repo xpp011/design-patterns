@@ -1,4 +1,4 @@
-package PrototypePattern;
+package PrototypeDesignPattern;
 
 import java.io.*;
 import java.util.Objects;

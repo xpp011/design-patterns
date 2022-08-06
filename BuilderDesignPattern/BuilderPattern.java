@@ -1,8 +1,8 @@
-package BuilderPattern;
+package BuilderDesignPattern;
 
-import BuilderPattern.ding.At;
-import BuilderPattern.ding.MarkDownMessage;
-import BuilderPattern.ding.Message;
+import BuilderDesignPattern.ding.At;
+import BuilderDesignPattern.ding.MarkDownMessage;
+import BuilderDesignPattern.ding.Message;
 
 import java.util.Arrays;
 

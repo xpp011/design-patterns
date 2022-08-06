@@ -1,4 +1,4 @@
-package BuilderPattern.ding;
+package BuilderDesignPattern.ding;
 
 import java.util.List;
 

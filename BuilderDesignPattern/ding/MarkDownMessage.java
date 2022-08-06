@@ -1,4 +1,4 @@
-package BuilderPattern.ding;
+package BuilderDesignPattern.ding;
 
 /**
  * @program: design-patterns

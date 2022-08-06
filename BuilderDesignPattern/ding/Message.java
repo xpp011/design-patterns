@@ -1,7 +1,6 @@
-package BuilderPattern.ding;
+package BuilderDesignPattern.ding;
 
 import java.util.HashMap;
-import java.util.List;
 
 /**
  * @program: design-patterns
