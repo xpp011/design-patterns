@@ -13,7 +13,21 @@
 - [原型模式](https://github.com/xpp011/design-patterns/tree/main/PrototypeDesignPattern)
   > 用原型实例指定创建对象的种类，并且通过考虑这些原型创建新的对象。
 
-
+### 结构型模式
+- [代理模式](https://github.com/xpp011/design-patterns/tree/main/ProxyDesignPattern)
+  > 为其他对象提供一种代理以控制对这个对象的访问。
+- [桥接模式](https://github.com/xpp011/design-patterns/tree/main/BridgeDesignPattern)
+  > 将抽象和实现解耦，让它们可以独立变化。
+- [装饰器模式](https://github.com/xpp011/design-patterns/tree/main/DecoratorDesignPattern)
+  > 动态地给一个对象添加一些额外的职责，就增加功能来说，装饰模式比生成子类更为灵活。
+- [适配器模式](https://github.com/xpp011/design-patterns/tree/main/AdapterDesignPattern)
+  > 把一个类的接口转换为客户需要的另外一个接口。使得因不兼容接口而不能一起工作的类一起工作。
+- [门面模式](https://github.com/xpp011/design-patterns/tree/main/FacadeDesignPattern)
+  > 门面模式为子系统提供一组统一的接口，定义一组高层接口让子系统更易用。
+- [组合模式](https://github.com/xpp011/design-patterns/tree/main/CompositeDesignPattern)
+  > 将一组对象组织（Compose）成树形结构，以表示一种“部分 - 整体”的层次结构
+- [享元模式](https://github.com/xpp011/design-patterns/tree/main/FlyweightDesignPattern)
+  > 享元模式运用共享技术有效地支持大量细粒度的对象。
 
 ## 前置
 
