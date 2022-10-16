@@ -10,7 +10,7 @@
 
 
 
-访问模式可以看作是用来解决`Double Dispatch`，实现方法层面的多态
+访问模式可以看作是用来解决[`Double Dispatch`](https://zh.wikipedia.org/wiki/%E5%A4%9A%E5%88%86%E6%B4%BE)，实现方法层面的多态
 
 
 
