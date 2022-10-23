@@ -29,6 +29,52 @@
 - [享元模式](https://github.com/xpp011/design-patterns/tree/main/FlyweightDesignPattern)
   > 享元模式运用共享技术有效地支持大量细粒度的对象。
 
+
+
+### 行为型模式
+
+- [观察者模式](https://github.com/xpp011/design-patterns/tree/main/ObserverDesignPattern)
+  
+  >在对象之间定义一个一对多的依赖，当一个对象状态改变的时候，所有依赖的对象都会自动收到通知。
+- [模板模式](https://github.com/xpp011/design-patterns/tree/main/TemplateMethodDesignPattern)
+  
+  >模板方法模式在一个方法中定义一个算法骨架，并将某些步骤推迟到子类中实现。模板方法模式可以让子类在不改变算法整体结构的情况下，重新定义算法中的某些步骤。
+- [策略模式](https://github.com/xpp011/design-patterns/tree/main/StrategyDesignPattern)
+  
+  >定义一族算法类，将每个算法分别封装起来，让它们可以互相替换。策略模式可以使算法的变化独立于使用它们的客户端（这里的客户端代指使用算法的代码）
+- [责任链模式](https://github.com/xpp011/design-patterns/tree/main/ChainOfResponsibilityDesignPattern)
+  
+  >将请求的发送和接收解耦，让多个接收对象都有机会处理这个请求。将这些接收对象串成一条链，并沿着这条链传递这个请求，直到链上的某个接收对象能够处理它为止。
+- [状态模式](https://github.com/xpp011/design-patterns/tree/main/StateDesignPattern)
+  
+  >当一个对象的内在状态改变时允许改变其行为，这个对象看起来像是改变了其类。
+- [迭代器模式](https://github.com/xpp011/design-patterns/tree/main/IteratorDesignPattern)
+  
+  >迭代器模式将集合对象的遍历操作从集合类中拆分出来，放到迭代器类中，让两者的职责更加单一。
+- [访问者模式](https://github.com/xpp011/design-patterns/tree/main/VisitorDesignPattern)
+  
+  >允许一个或者多个操作应用到一组对象上，解耦操作和对象本身。主要解决双分派问题
+- [备忘录模式](https://github.com/xpp011/design-patterns/tree/main/MementoDesignPattern)
+  
+  >在不违背封装原则的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态，以便之后恢复对象为先前的状态。
+- [命令模式](https://github.com/xpp011/design-patterns/tree/main/CommandDesignPattern)
+  
+  >命令模式将请求（命令）封装为一个对象，这样可以使用不同的请求参数化其他对象（将不同请求依赖注入到其他对象），并且能够支持请求（命令）的排队执行、记录日志、撤销等（附加控制）功能。
+- [解释器模式](https://github.com/xpp011/design-patterns/tree/main/InterpreterDesignPattern)
+  
+  >解释器模式为某个语言定义它的语法（或者叫文法）表示，并定义一个解释器用来处理这个语法。
+- [中介模式](https://github.com/xpp011/design-patterns/tree/main/MediatorDesignPattern)
+  
+  > 中介模式定义了一个单独的（中介）对象，来封装一组对象之间的交互。将这组对象之间的交互委派给与中介对象交互，来避免对象之间的直接交互。
+
+
+
+
+
+![image-20221023235147416](https://typora.xpp011.cn/typora/img/image-20221023235147416.png)
+
+
+
 ## 前置
 
 ### 一、代码质量评判标准
@@ -292,7 +338,6 @@ DRY 原则中文描述是：不要重复自己，将它应用在编程中，可�
 
 
 ![](https://typora.xpp011.cn/typora/img/fbf1ae0ce08d4ea890b80944c2b8309f.jpg)
-
 
 
 
